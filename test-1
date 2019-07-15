@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class teste {
+
+	public static void main(String[] args) {
+		//create the var
+		int[] arr;
+
+		//receive the dinamic value
+		Scanner in = new Scanner(System.in);
+		Integer int0 = in.nextInt(); //int is not a valid name for a variable! 
+		in.close();
+
+		//prepare array
+		arr = new int[6];
+
+		//initialize array
+		arr [0] = 2;
+		arr [1] = 3;
+		arr [2] = 4;
+		arr [3] = 3;
+		arr [4] = 2;
+		arr [5] = 1;
+
+		//count the occurrences
+		int total = 0;
+		for ( int i : arr ) {
+		    if ( int0.equals( i ) ) total += 1;
+		}
+
+		//show the result
+		System.out.printf("Total occurrences in arr: %d\n", total);
+	}
+
+}
