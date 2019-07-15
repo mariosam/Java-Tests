@@ -1,0 +1,33 @@
+import java.util.Map;
+import java.util.TreeMap;
+
+public class teste3 {
+
+	public static void main(String[] args) {
+		int num[] = { 34, 31, 34, 77, 82 };
+		MostPopularNumber(num);
+	}
+
+	private static int MostPopularNumber(int[] num) {
+		Map<Integer, Integer> m = new TreeMap<>();
+		int i = 0; //input value
+		int s = 0; //showtime
+
+        for ( Integer val : num) {
+            if (!m.containsKey(val)) {
+                m.put(val, 0);
+            }
+            m.put(val, m.get(val) + 1);
+        }
+
+        for ( Map.Entry<Integer, Integer> entry : m.entrySet()) {
+            System.out.println("Number reps " + entry.getKey() + " : " + entry.getValue());
+            if ( s <= entry.getValue() ) {
+            	s = entry.getValue();
+            	if ( i > entry.getKey() ) i = entry.getKey();
+            }
+        }
+        
+        return i;
+	}
+}
