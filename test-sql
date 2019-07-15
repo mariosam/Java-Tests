@@ -1,0 +1,7 @@
+select 
+	date_format(s.Date_Time, "Y%"),
+	e.Name,
+	SUM( Date_Time )
+from Users e
+join Logins_System s on e.idUser = s.idUser grouped by idUser
+order by s.Date_Time
