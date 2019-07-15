@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class teste2 {
+
+	public static void main(String[] args) {
+		//String word = "arara";
+		System.out.println("Enter the word: ");
+		Scanner scanner = new Scanner( System.in );
+		String word = scanner.nextLine();
+		scanner.close();
+
+		if ( IsAlmostPalindrome( word ) )
+			System.out.printf("Palindrome: true");
+		else
+			System.out.printf("Palindrome: false");
+	}
+	
+	private static boolean IsAlmostPalindrome(String word) {
+		String invertida = new StringBuffer( word ).reverse().toString();
+
+		if ( word.equals( invertida ) ) {
+			return true; //its palindrome
+		} else {
+			return false; //not palindrome
+		}
+	}
+
+}
